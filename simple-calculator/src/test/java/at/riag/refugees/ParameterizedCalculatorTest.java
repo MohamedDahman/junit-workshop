@@ -12,20 +12,22 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class ParameterizedCalculatorTest {
 
-    private int a;
-    private int b;
+    private int multiplicator;
+    private int multiplicand;
+    private int result;
 
-    public ParameterizedCalculatorTest(int a, int b) {
-        this.a = a;
-        this.b = b;
+    public ParameterizedCalculatorTest(int multiplicator, int multiplicand, int result) {
+        this.multiplicator = multiplicator;
+        this.multiplicand = multiplicand;
+        this.result = result;
     }
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][] {
-                {1 , 2},
-                { 5, 3 },
-                { 121, 4 }
+                {1, 2, 2},
+                {5, 3, 15},
+                {121, 4, 484}
         };
         return Arrays.asList(data);
     }
@@ -33,6 +35,6 @@ public class ParameterizedCalculatorTest {
 
     @Test
     public void multiplicationShouldReturnCorrectResult() {
-        assertEquals(a * b, new Calculator().multiply(a, b));
+        assertEquals(result, new Calculator().multiply(multiplicator, multiplicand));
     }
 }

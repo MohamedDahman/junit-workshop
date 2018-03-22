@@ -8,7 +8,11 @@ import static org.junit.Assert.assertEquals;
 public class ParameterizedCalculatorTest {
 
     public static int[][] data() {
-        return new int[][] { { 1 , 2, 2 }, { 5, 3, 15 }, { 121, 4, 484 } };
+        return new int[][] {
+                {1, 2, 2},
+                {5, 3, 15},
+                {121, 4, 484}
+        };
     }
 
     @ParameterizedTest

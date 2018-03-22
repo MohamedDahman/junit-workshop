@@ -13,6 +13,7 @@
   <modules>
       <module>simple-calculator</module>
       <module>simple-calculator-junit5</module>
+      <module>simple-calculator-mocking</module>
   </modules>
 
   <build>
